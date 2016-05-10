@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import com.skyline.control.Control;
 import com.skyline.control.PermissionDeclaration;
-
 import android.util.Log;
 import de.robv.android.xposed.XC_MethodHook.MethodHookParam;
 
