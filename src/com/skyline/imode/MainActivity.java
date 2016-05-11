@@ -40,6 +40,7 @@ public class MainActivity extends Activity {
 		initCheckBox("call");
 		initCheckBox("smsRead");
 		initCheckBox("smsSend");
+		initCheckBox("nfc");
 	}
 	
 	private void initCheckBox(String permissionName){

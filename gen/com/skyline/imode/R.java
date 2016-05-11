@@ -26,7 +26,7 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f080017;
+        public static final int action_settings=0x7f080019;
         public static final int audio=0x7f08000a;
         public static final int audio_enhance=0x7f080009;
         public static final int call=0x7f080012;
@@ -42,6 +42,8 @@ public final class R {
         public static final int linearLayout1=0x7f080000;
         public static final int location=0x7f08000c;
         public static final int location_enhance=0x7f08000b;
+        public static final int nfc=0x7f080018;
+        public static final int nfc_enhance=0x7f080017;
         public static final int smsRead=0x7f080014;
         public static final int smsRead_enhance=0x7f080013;
         public static final int smsSend=0x7f080016;

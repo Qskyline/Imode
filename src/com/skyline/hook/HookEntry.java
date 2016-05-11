@@ -47,6 +47,7 @@ public class HookEntry implements IXposedHookLoadPackage, IXposedHookZygoteInit 
 			hookPermission(HookEnhanced.getInstances(permissionInfo, "internetAccess"), null);
 			hookPermission(HookEnhanced.getInstances(permissionInfo, "storageAccess"), null);			
 			hookPermission(HookMessageSend.getInstances(permissionInfo, "smsSendAccess"), null);
+			hookPermission(HookNFC.getInstances(permissionInfo, "nfcAccess"), null);
 			break;
 		case loadPackage:
 			hookPermission(HookInternet.getInstances(permissionInfo, "internetAccess"), null);

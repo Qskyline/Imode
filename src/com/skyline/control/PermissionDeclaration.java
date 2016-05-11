@@ -81,6 +81,10 @@ public class PermissionDeclaration {
 		"android.telephony.SmsManager:sendMultimediaMessage",
 		"android.telephony.SmsManager:getISmsService"
 	};
+	private String[] nfc = new String[] {
+		"android.nfc.NfcAdapter:getDefaultAdapter",
+		"android.nfc.NfcAdapter:getNfcAdapter"	
+	};
 	private String[] internet_enhance = new String[] {
 		"inet:3003",
 		"inet_raw:3004",
@@ -110,6 +114,7 @@ public class PermissionDeclaration {
 		addPermissionByMethods("callAccess", activity);
 		addPermissionByMethods("smsReadAccess", smsRead);
 		addPermissionByMethods("smsSendAccess", smsSend);
+		addPermissionByMethods("nfcAccess", nfc);
 	
 		addPermissionByGids("internetAccess", internet_enhance);
 		addPermissionByGids("storageAccess", storage_enhance);
