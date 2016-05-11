@@ -5,21 +5,26 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import com.skyline.control.Control;
 import com.skyline.control.PermissionDeclaration;
-import android.util.Log;
 import de.robv.android.xposed.XC_MethodHook.MethodHookParam;
 
 public class HookMessageSend extends HookBase {
 	private enum Methods {
-		sendTextMessage,sendDataMessage,sendMultipartTextMessage
+		sendMultimediaMessage,getISmsService
 	};
 	
 	private Methods method;
+	private boolean isVisible = true; 
 	
 	public static ArrayList<HookBase> getInstances(PermissionDeclaration allPermissionInfo, String permissionName) {
 		ArrayList<HookBase> listHook = new ArrayList<HookBase>();
 		HashMap<String, String> permissionInfo = allPermissionInfo.getPermissionMethodsInfo(permissionName);
 		for (Entry<String, String> enty : permissionInfo.entrySet()) {
-			listHook.add(new HookMessageSend(permissionName, enty.getValue(), enty.getKey()));
+			if (enty.getKey().equals(Methods.getISmsService.name())) {
+				listHook.add(new HookMessageSend(permissionName, enty.getValue(), enty.getKey(), false));
+			}
+			else {
+				listHook.add(new HookMessageSend(permissionName, enty.getValue(), enty.getKey()));
+			}
 		}
 		return listHook;
 	}
@@ -32,16 +37,24 @@ public class HookMessageSend extends HookBase {
 			method = null;
 		}
 	}
+	
+	public HookMessageSend(String permissionName, String className, String methodName, boolean isVisible) {
+		super(permissionName, className, methodName);
+		try {
+			method = Methods.valueOf(methodName);
+		} catch (IllegalArgumentException e) {		
+			method = null;
+		}
+		this.isVisible = isVisible;
+	}
 
 	@Override
 	protected void before(MethodHookParam param, Control client) throws Throwable {
 		if (method == null) return;
 		switch (method) {
-		case sendDataMessage:
-		case sendMultipartTextMessage:
-		case sendTextMessage:
+		case getISmsService:
+		case sendMultimediaMessage:
 			if (isForbidden(client)) {
-				Log.i("Imode", "111111111111111111111111111");
 				param.setResult(null);
 			}
 			break;
@@ -51,6 +64,11 @@ public class HookMessageSend extends HookBase {
 
 	@Override
 	protected void after(MethodHookParam param, Control client) throws Throwable {
-		// TODO Auto-generated method stub
+	}
+	
+	@Override
+	public boolean isVisible() {
+		if (isVisible) return true;
+		else return false;
 	}
 }

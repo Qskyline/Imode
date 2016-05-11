@@ -78,9 +78,8 @@ public class PermissionDeclaration {
 		"android.content.ContentResolver:query"
 	};
 	private String[] smsSend = new String[] {
-		"android.telephony.SmsManager:sendTextMessage",
-		"android.telephony.SmsManager:sendDataMessage",
-		"android.telephony.SmsManager:sendMultipartTextMessage"
+		"android.telephony.SmsManager:sendMultimediaMessage",
+		"android.telephony.SmsManager:getISmsService"
 	};
 	private String[] internet_enhance = new String[] {
 		"inet:3003",
