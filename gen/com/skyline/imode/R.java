@@ -18,52 +18,52 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static int activity_horizontal_margin=0x7f040000;
+        public static int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int fake=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
+        public static int fake=0x7f020000;
+        public static int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f080019;
-        public static final int audio=0x7f08000a;
-        public static final int audio_enhance=0x7f080009;
-        public static final int call=0x7f080012;
-        public static final int callLog=0x7f080010;
-        public static final int callLog_enhance=0x7f08000f;
-        public static final int call_enhance=0x7f080011;
-        public static final int contact=0x7f08000e;
-        public static final int contact_enhance=0x7f08000d;
-        public static final int image=0x7f080006;
-        public static final int image_enhance=0x7f080005;
-        public static final int internet=0x7f080002;
-        public static final int internet_enhance=0x7f080001;
-        public static final int linearLayout1=0x7f080000;
-        public static final int location=0x7f08000c;
-        public static final int location_enhance=0x7f08000b;
-        public static final int nfc=0x7f080018;
-        public static final int nfc_enhance=0x7f080017;
-        public static final int smsRead=0x7f080014;
-        public static final int smsRead_enhance=0x7f080013;
-        public static final int smsSend=0x7f080016;
-        public static final int smsSend_enhance=0x7f080015;
-        public static final int storage=0x7f080004;
-        public static final int storage_enhance=0x7f080003;
-        public static final int video=0x7f080008;
-        public static final int video_enhance=0x7f080007;
+        public static int action_settings=0x7f080019;
+        public static int audio=0x7f08000a;
+        public static int audio_enhance=0x7f080009;
+        public static int call=0x7f080012;
+        public static int callLog=0x7f080010;
+        public static int callLog_enhance=0x7f08000f;
+        public static int call_enhance=0x7f080011;
+        public static int contact=0x7f08000e;
+        public static int contact_enhance=0x7f08000d;
+        public static int image=0x7f080006;
+        public static int image_enhance=0x7f080005;
+        public static int internet=0x7f080002;
+        public static int internet_enhance=0x7f080001;
+        public static int linearLayout1=0x7f080000;
+        public static int location=0x7f08000c;
+        public static int location_enhance=0x7f08000b;
+        public static int nfc=0x7f080018;
+        public static int nfc_enhance=0x7f080017;
+        public static int smsRead=0x7f080014;
+        public static int smsRead_enhance=0x7f080013;
+        public static int smsSend=0x7f080016;
+        public static int smsSend_enhance=0x7f080015;
+        public static int storage=0x7f080004;
+        public static int storage_enhance=0x7f080003;
+        public static int video=0x7f080008;
+        public static int video_enhance=0x7f080007;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
+        public static int activity_main=0x7f030000;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static int main=0x7f070000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050002;
-        public static final int app_description=0x7f050003;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050001;
+        public static int action_settings=0x7f050002;
+        public static int app_description=0x7f050003;
+        public static int app_name=0x7f050000;
+        public static int hello_world=0x7f050001;
     }
     public static final class style {
         /** 
@@ -87,10 +87,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static int AppBaseTheme=0x7f060000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static int AppTheme=0x7f060001;
     }
 }

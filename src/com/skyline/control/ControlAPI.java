@@ -2,10 +2,8 @@ package com.skyline.control;
 
 import java.util.ArrayList;
 import java.util.Set;
-
 import com.skyline.control.CurrentProcesses.CallBack;
-
-import android.app.Activity;
+import android.content.Context;
 import android.os.Process;
 import android.os.RemoteException;
 
@@ -35,11 +33,11 @@ public class ControlAPI {
 	private CurrentProcesses currentProcesses = null;
 	private FakeEnvironment fakeEnvironment = null;
 	
-	public ControlAPI(Activity activity) throws ControlException{
+	public ControlAPI(Context context) throws ControlException{
 		if (client == null) client = new Management().getService();
 		if (permissionInfo == null) permissionInfo = new PermissionDeclaration();
 		if (currentProcesses == null) currentProcesses = new CurrentProcesses();
-		if (fakeEnvironment == null) fakeEnvironment = new FakeEnvironment(activity);
+		if (fakeEnvironment == null) fakeEnvironment = new FakeEnvironment(context);
 		if (client == null) {
 			throw new ControlException();
 		}

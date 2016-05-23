@@ -6,21 +6,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import com.skyline.imode.R;
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 
 @SuppressLint("WorldReadableFiles")
 public class FakeEnvironment {	
 	
-	public FakeEnvironment(Activity activity) {
-		setFakeImage(activity);
+	public FakeEnvironment(Context context) {
+		setFakeImage(context);
 	}
 	
 	@SuppressWarnings("deprecation")
-	private void setFakeImage(Activity activity) {
-		File f = new File(activity.getFilesDir().getAbsolutePath() + "/fake.jpg");
+	private void setFakeImage(Context context) {
+		File f = new File(context.getFilesDir().getAbsolutePath() + "/fake.jpg");
 		if (f.exists()) return;		
-		InputStream in = activity.getResources().openRawResource(R.drawable.fake); 
+		InputStream in = context.getResources().openRawResource(R.drawable.fake); 
 		byte [] buffer = null;
 		try {
 			int length = in.available();       
@@ -33,7 +32,7 @@ public class FakeEnvironment {
 		}
 		if (buffer != null) {
 			try {
-				FileOutputStream fout = activity.openFileOutput("fake.jpg", Context.MODE_WORLD_READABLE);
+				FileOutputStream fout = context.openFileOutput("fake.jpg", Context.MODE_WORLD_READABLE);
 		        fout.write(buffer);  
 		        fout.close(); 
 			} catch (IOException e) {
